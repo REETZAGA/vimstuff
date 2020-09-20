@@ -1,0 +1,9 @@
+{                                                                                                                     
+   "explorer.file.showHiddenFiles":true,
+   "explorer.icon.enableNerdfont": true,
+   "prettier.singleQuote":true,
+   "prettier.tabWidth":4,
+   "prettier.jsxBracketSameLine":true,
+   "prettier.printWidth": 90
+}
+    
