@@ -27,6 +27,7 @@ map <silent> gd <Plug>(coc-definition)
 "map <silent> gy <Plug>(coc-type-definition)
 map <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
+map <silent> <C-p> :FzfFiles<CR>
 set tabstop=4
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -72,4 +73,8 @@ map <C-i> :Prettier<CR>
 let g:conoline_auto_enable = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+let g:fzf_command_prefix = 'Fzf'
+" if i do not want to search for file names in :Rg
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
