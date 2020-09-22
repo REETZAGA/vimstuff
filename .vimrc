@@ -22,13 +22,32 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-explorer',
   \ ]
-
 map <silent> gd <Plug>(coc-definition)
 "map <silent> gy <Plug>(coc-type-definition)
 map <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
 map <silent> <C-p> :FzfFiles<CR>
+
 set tabstop=4
+set shiftwidth=4
+set expandtab
+
+let g:gruvbox_contrast_light="hard"
+" if i want to use default color by theme
+"let g:conoline_use_colorscheme_default_normal=1
+"let g:conoline_use_colorscheme_default_insert=1
+
+" For dark colorschemes
+"let g:conoline_color_normal_dark = 'guibg=#181818'
+"let g:conoline_color_normal_nr_dark = 'guibg=#181818'
+"let g:conoline_color_insert_dark = 'guibg=#000000'
+"let g:conoline_color_insert_nr_dark = 'guibg=#000000'
+
+" For light colorschemes
+"let g:conoline_color_normal_light = 'guibg=#eaeaea'
+"let g:conoline_color_normal_nr_light = 'guibg=#eaeaea'
+"let g:conoline_color_insert_light = 'guibg=#ffffff'
+"let g:conoline_color_insert_nr_light = 'guibg=#ffffff'
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -37,7 +56,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 set updatetime=300
 
 " Give more space for displaying messages.
-set cmdheight=2
+"set cmdheight=2
 " Setup Prettier command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -65,7 +84,8 @@ endif
 map <space>e :CocCommand explorer<CR>
 map <C-i> :Prettier<CR>
 
-:colorscheme fairy-garden
+:colorscheme gruvbox
+:set background=dark
 :set relativenumber
 :set laststatus=2
 :set noshowmode
@@ -77,4 +97,5 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:fzf_command_prefix = 'Fzf'
 " if i do not want to search for file names in :Rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 
