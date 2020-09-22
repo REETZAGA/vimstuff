@@ -10,6 +10,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
 
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 POWERLEVEL9K_FOLDER_ICON=""
 POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
