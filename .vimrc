@@ -10,11 +10,11 @@ Plug 'tpope/vim-surround'
 Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'miyakogi/conoline.vim'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 call plug#end()
 
 " Coc things
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
@@ -28,9 +28,17 @@ map <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
 map <silent> <C-p> :FzfFiles<CR>
 
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+set hidden
+set shortmess+=c
 
 let g:gruvbox_contrast_light="hard"
 " if i want to use default color by theme
