@@ -10,6 +10,8 @@ Plug 'tpope/vim-surround'
 Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'miyakogi/conoline.vim'
+Plug 'shmargum/vim-sass-colors'
+Plug 'tpope/vim-commentary'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 call plug#end()
 
